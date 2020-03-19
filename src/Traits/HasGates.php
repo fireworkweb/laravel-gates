@@ -2,8 +2,6 @@
 
 namespace Fireworkweb\Gates\Traits;
 
-use Illuminate\Support\Facades\Gate;
-
 trait HasGates
 {
     protected static function gateRouteName() : string
@@ -32,6 +30,10 @@ trait HasGates
 
     public static function gateRegister() : void
     {
-        Gate::resource(static::gateRouteName(), __CLASS__, static::gateAbilities());
+        gate()->resource(
+            static::gateRouteName(),
+            __CLASS__,
+            static::gateAbilities()
+        );
     }
 }
