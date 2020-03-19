@@ -8,12 +8,12 @@ class PolicyWithResourceGates
 {
     use HasGates;
 
-    protected static function gateRouteName() : string
+    protected static function gateRouteName(): string
     {
         return 'policy_resource';
     }
 
-    protected static function gateAbilities() : array
+    protected static function gateAbilities(): array
     {
         return static::gateResourceAbilities();
     }
