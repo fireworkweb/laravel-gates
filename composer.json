@@ -1,35 +1,42 @@
 {
-    "name": "spatie/laravel-gates",
+    "name": "fireworkweb/laravel-gates",
     "description": "Permission handling for Laravel using Gates with Route Names",
     "keywords": [
-        "spatie",
-        "laravel-gates"
+        "fireworkweb",
+        "laravel",
+        "permission",
+        "permissions",
+        "gate",
+        "gates",
+        "acl",
+        "rbac"
     ],
-    "homepage": "https://github.com/spatie/laravel-gates",
+    "homepage": "https://github.com/fireworkweb/laravel-gates",
     "license": "MIT",
     "authors": [
         {
             "name": "Daniel Polito",
             "email": "danielbpolito@gmail.com",
-            "homepage": "https://spatie.be",
+            "homepage": "https://dbpolito.dev",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.3"
+        "php": "^7.3",
+        "illuminate/support": "^5.8|^6.0|^7.0"
     },
     "require-dev": {
-        "symfony/var-dumper": "^4.3",
+        "orchestra/testbench": "^3.8|^4.0|^5.0",
         "phpunit/phpunit": "^8.2"
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Fireworkweb\\Gates\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Fireworkweb\\Gates\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -42,11 +49,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
-            }
+                "Fireworkweb\\Gates\\SkeletonServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
