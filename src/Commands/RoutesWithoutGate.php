@@ -18,16 +18,16 @@ class RoutesWithoutGate extends Command
 
         $routesWithoutGate = collect($routes)
             ->filter(function ($route) {
-                return $this->hasMiddleware($route) && $this->hasGate($route);
+                return $this->hasMiddleware($route) && ! $this->hasGate($route);
             })
             ->map(function ($route) {
-                return $route->getName() ?: $route->getPrefix();
+                return [$route->getName() ?: $route->getPrefix()];
             });
 
         if ($routesWithoutGate->isEmpty()) {
             $this->info('Great job, no routes without gate. :)');
         } else {
-            $this->error('Routes without gate:');
+            $this->error('You got routes without gate, see list below.');
             $this->table(['Route'], $routesWithoutGate->all());
         }
     }
