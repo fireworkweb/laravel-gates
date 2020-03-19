@@ -15,13 +15,32 @@ You can install the package via composer:
 composer require fireworkweb/laravel-gates
 ```
 
+### Package Middlewares
+
+This package comes 2 middlewares:
+
+* `Gate` - Checks current route gates, if no matching gate, breaks
+* `GateOptional` - Checks current route gates, if no matching gate, logs
+
+You can add them inside your `app/Http/Kernel.php` file.
+
+```php
+protected $routeMiddleware = [
+    // ...
+    'gate' => \Fireworkweb\Gates\Middlewares\Gate::class,
+    'gate_optional' => \Fireworkweb\Gates\Middlewares\GateOptional::class,
+];
+```
+
 ## Usage
 
 Here is an example:
 
 ```php
-
-Route::get('posts/{post}/edit')->name('posts.edit')->middleware('gate');
+Route::middleware('gate')->group(function () {
+    // ...
+    Route::get('posts/{post}/edit')->name('posts.edit');
+});
 ```
 
 ```php
@@ -54,6 +73,20 @@ class PolicyWithResourceGates
         return $user->id === $post->user_id;
     }
 }
+```
+
+That will register a gate `posts.edit` and on route `posts/1/edit` it will check if you on `App\Policies\Post@edit` injecting route parameters.
+
+### Commands
+
+You have commands to help you find routes without gate:
+
+```bash
+# it will get the routes that has `gate` middleware
+fwd artisan gates:routes-without-gate
+
+# in case you are using a custom middleware name or want to check the optional one
+fwd artisan gates:routes-without-gate gate_optional
 ```
 
 ## Testing

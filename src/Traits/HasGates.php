@@ -4,6 +4,16 @@ namespace Fireworkweb\Gates\Traits;
 
 trait HasGates
 {
+    public function gateAllows()
+    {
+        return true;
+    }
+
+    public function gateDenies()
+    {
+        return false;
+    }
+
     protected static function gateRouteName(): string
     {
         // @TODO: add magic way
