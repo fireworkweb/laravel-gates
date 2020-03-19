@@ -1,0 +1,54 @@
+{
+    "name": "spatie/laravel-gates",
+    "description": "Permission handling for Laravel using Gates with Route Names",
+    "keywords": [
+        "spatie",
+        "laravel-gates"
+    ],
+    "homepage": "https://github.com/spatie/laravel-gates",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Polito",
+            "email": "danielbpolito@gmail.com",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3",
+        "phpunit/phpunit": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Skeleton\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Skeleton\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\Skeleton\\SkeletonServiceProvider"
+            ],
+            "aliases": {
+                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
