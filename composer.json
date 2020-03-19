@@ -52,7 +52,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Fireworkweb\\Gates\\SkeletonServiceProvider"
+                "Fireworkweb\\Gates\\GatesServiceProvider"
             ]
         }
     },

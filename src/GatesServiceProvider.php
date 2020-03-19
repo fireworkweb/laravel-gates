@@ -2,6 +2,7 @@
 
 namespace Fireworkweb\Gates;
 
+use Fireworkweb\Gates\Commands\RoutesWithoutGate;
 use Fireworkweb\Gates\Traits\HasGates;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -14,6 +15,10 @@ class GatesServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/gates.php' => config_path('gates.php'),
         ], 'config');
+
+        $this->commands([
+            RoutesWithoutGate::class,
+        ]);
 
         $this->loadGates();
     }
