@@ -33,7 +33,7 @@ class GatesServiceProvider extends ServiceProvider
 
     protected function loadGates()
     {
-        $paths = array_filter($this->app->config['gates.paths'], function ($path) {
+        $paths = array_filter(config('gates.paths'), function ($path) {
             return is_dir($path);
         });
 
@@ -49,7 +49,7 @@ class GatesServiceProvider extends ServiceProvider
                     Str::after($file->getPathname(), realpath(app_path()).DIRECTORY_SEPARATOR)
                 );
             })
-            ->merge($this->app->config['gates.classes'])
+            ->merge(config('gates.classes'))
             ->unique()
             ->filter(function ($class) {
                 return in_array(HasGates::class, trait_uses_recursive($class));
