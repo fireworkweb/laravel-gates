@@ -26,5 +26,5 @@ return [
     */
     'classes' => [
         // App\Policies\SomePolicy::class,
-    ]
+    ],
 ];

@@ -4,18 +4,18 @@ namespace Fireworkweb\Gates\Traits;
 
 trait HasGates
 {
-    protected static function gateRouteName() : string
+    protected static function gateRouteName(): string
     {
         // @TODO: add magic way
         return '';
     }
 
-    protected static function gateAbilities() : array
+    protected static function gateAbilities(): array
     {
         return [];
     }
 
-    protected static function gateResourceAbilities() : array
+    protected static function gateResourceAbilities(): array
     {
         return [
             'index' => 'index',
@@ -28,7 +28,7 @@ trait HasGates
         ];
     }
 
-    public static function gateRegister() : void
+    public static function gateRegister(): void
     {
         gate()->resource(
             static::gateRouteName(),

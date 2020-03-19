@@ -8,12 +8,12 @@ class PolicyWithGates
 {
     use HasGates;
 
-    protected static function gateRouteName() : string
+    protected static function gateRouteName(): string
     {
         return 'policy';
     }
 
-    protected static function gateAbilities() : array
+    protected static function gateAbilities(): array
     {
         return [
             'index' => 'index',
