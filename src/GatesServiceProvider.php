@@ -52,7 +52,8 @@ class GatesServiceProvider extends ServiceProvider
             ->merge(config('gates.classes'))
             ->unique()
             ->filter(function ($class) {
-                return in_array(HasGates::class, trait_uses_recursive($class));
+                return in_array(HasGates::class, class_uses_recursive($class))
+                    && ! (new \ReflectionClass($class))->isAbstract();
             })
             ->each(function ($class) {
                 $class::gateRegister();
