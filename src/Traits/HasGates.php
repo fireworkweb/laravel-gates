@@ -42,7 +42,7 @@ trait HasGates
     {
         gate()->resource(
             static::gateRouteName(),
-            __CLASS__,
+            static::class,
             static::gateAbilities()
         );
     }
