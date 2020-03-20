@@ -4,8 +4,6 @@ namespace Fireworkweb\Gates\Tests;
 
 use Fireworkweb\Gates\Middlewares\Gate;
 use Fireworkweb\Gates\Tests\Policies\PolicyWithGates;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Str;
 
 class CommandTest extends TestCase
 {
@@ -23,14 +21,11 @@ class CommandTest extends TestCase
             return 'yay';
         })->name('policy.accept')->middleware(Gate::class);
 
-        $exitCode = Artisan::call('gates:routes-without-gate', [
+        $this->artisan('gates:routes-without-gate', [
             'middleware' => Gate::class,
-        ]);
-
-        $output = Artisan::output();
-
-        $this->assertSame(0, $exitCode);
-        $this->assertTrue(Str::contains($output, 'Great job, no routes without gate. :)'));
+        ])
+            ->expectsOutput('Great job, no routes without gate. :)')
+            ->assertExitCode(0);
     }
 
     /** @test */
@@ -40,14 +35,10 @@ class CommandTest extends TestCase
             return 'yay';
         })->name('something.index')->middleware(Gate::class);
 
-        $exitCode = Artisan::call('gates:routes-without-gate', [
+        $this->artisan('gates:routes-without-gate', [
             'middleware' => Gate::class,
-        ]);
-
-        $output = Artisan::output();
-
-        $this->assertSame(1, $exitCode);
-        $this->assertTrue(Str::contains($output, 'You got routes without gate, see list below:'));
-        $this->assertTrue(Str::contains($output, 'something.index'));
+        ])
+            ->expectsOutput('You got routes without gate, see list below:')
+            ->assertExitCode(1);
     }
 }
