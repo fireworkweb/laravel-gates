@@ -21,11 +21,9 @@ class GatesClassesTest extends TestCase
     /** @test */
     public function it_register_gates_classes()
     {
-        $this->assertTrue(true);
-
         $gates = [
-            'policy.index',
-            'policy.show',
+            'policy.accept',
+            'policy.deny',
             'policy_resource.index',
             'policy_resource.create',
             'policy_resource.store',

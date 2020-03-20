@@ -4,6 +4,7 @@ namespace Fireworkweb\Gates\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Routing\Route;
+use Illuminate\Routing\Router;
 
 class RoutesWithoutGate extends Command
 {
@@ -12,9 +13,9 @@ class RoutesWithoutGate extends Command
 
     protected $description = 'Shows routes without gate that has the middleware.';
 
-    public function handle()
+    public function handle(Router $router)
     {
-        $routes = app('routes')->getRoutes();
+        $routes = $router->getRoutes();
 
         $routesWithoutGate = collect($routes)
             ->filter(function ($route) {
@@ -26,9 +27,13 @@ class RoutesWithoutGate extends Command
 
         if ($routesWithoutGate->isEmpty()) {
             $this->info('Great job, no routes without gate. :)');
+
+            return 0;
         } else {
-            $this->error('You got routes without gate, see list below.');
+            $this->error('You got routes without gate, see list below:');
             $this->table(['Route'], $routesWithoutGate->all());
+
+            return 1;
         }
     }
 

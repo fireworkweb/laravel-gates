@@ -16,8 +16,8 @@ class PolicyWithGates
     protected static function gateAbilities(): array
     {
         return [
-            'index' => 'index',
-            'show' => 'show',
+            'accept' => 'gateAllowsGuests',
+            'deny' => 'gateDeniesGuests',
         ];
     }
 }

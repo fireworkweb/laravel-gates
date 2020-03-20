@@ -9,10 +9,21 @@ trait HasGates
         return true;
     }
 
+    public function gateAllowsGuests($user = null)
+    {
+        return true;
+    }
+
     public function gateDenies()
     {
         return false;
     }
+
+    public function gateDeniesGuests($user = null)
+    {
+        return false;
+    }
+
 
     protected static function gateRouteName(): string
     {
