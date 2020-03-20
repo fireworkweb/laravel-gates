@@ -3,7 +3,7 @@
 [![Packagist Version](https://img.shields.io/packagist/v/fireworkweb/laravel-gates?style=for-the-badge)](https://packagist.org/packages/fireworkweb/laravel-gates)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fireworkweb/laravel-gates/run-tests?style=for-the-badge)](https://github.com/fireworkweb/laravel-gates/actions?query=workflow%3Arun-tests)
 [![Codecov](https://img.shields.io/codecov/c/github/fireworkweb/laravel-gates?style=for-the-badge)](https://codecov.io/gh/fireworkweb/laravel-gates)
-[![Scrutinizer](https://img.shields.io/scrutinizer/build/g/fireworkweb/laravel-gates?style=for-the-badge)](https://scrutinizer-ci.com/g/fireworkweb/laravel-gates)
+[![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/fireworkweb/laravel-gates?style=for-the-badge)](https://scrutinizer-ci.com/g/fireworkweb/laravel-gates)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/fireworkweb/laravel-gates?style=for-the-badge)](https://packagist.org/packages/fireworkweb/laravel-gates)
 
 This package allows you to manage permissions using Gates with Route Names.
