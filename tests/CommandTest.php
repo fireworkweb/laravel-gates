@@ -22,8 +22,8 @@ class CommandTest extends TestCase
         })->name('policy.accept')->middleware(Gate::class);
 
         $this->artisan('gates:routes-without-gate', [
-                'middleware' => Gate::class,
-            ])
+            'middleware' => Gate::class,
+        ])
             ->expectsOutput('Great job, no routes without gate. :)')
             ->assertExitCode(0);
     }
@@ -36,8 +36,8 @@ class CommandTest extends TestCase
         })->name('something.index')->middleware(Gate::class);
 
         $this->artisan('gates:routes-without-gate', [
-                'middleware' => Gate::class,
-            ])
+            'middleware' => Gate::class,
+        ])
             ->expectsOutput('You got routes without gate, see list below:')
             ->assertExitCode(1);
     }

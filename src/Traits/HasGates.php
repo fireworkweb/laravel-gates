@@ -24,7 +24,6 @@ trait HasGates
         return false;
     }
 
-
     protected static function gateRouteName(): string
     {
         // @TODO: add magic way

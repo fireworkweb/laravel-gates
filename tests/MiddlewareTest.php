@@ -84,7 +84,6 @@ class MiddlewareTest extends TestCase
     /** @test */
     public function it_can_allow_optional_request_without_gate_and_log()
     {
-
         $this->app['router']->get('something', function () {
             return 'yay';
         })->name('something.index')->middleware(GateOptional::class);
