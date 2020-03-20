@@ -1,4 +1,4 @@
-# Permission handling for Laravel using Gates with Route Names
+# fireworkweb/laravel-gates
 
 [![Packagist Version](https://img.shields.io/packagist/v/fireworkweb/laravel-gates?style=for-the-badge)](https://packagist.org/packages/fireworkweb/laravel-gates)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fireworkweb/laravel-gates/run-tests?style=for-the-badge)](https://github.com/fireworkweb/laravel-gates/actions?query=workflow%3Arun-tests)
