@@ -39,14 +39,12 @@ class GatesServiceProvider extends ServiceProvider
 
         $files = ! empty($paths) ? (new Finder)->in($paths)->files() : [];
 
-        $namespace = $this->app->getNamespace();
-
         collect($files)
-            ->map(function ($file) use ($namespace) {
-                return $namespace.str_replace(
+            ->map(function ($file) {
+                return str_replace(
                     ['/', '.php'],
                     ['\\', ''],
-                    Str::after($file->getPathname(), realpath(app_path()).DIRECTORY_SEPARATOR)
+                    Str::ucfirst(Str::after($file->getPathname(), realpath(base_path()).DIRECTORY_SEPARATOR))
                 );
             })
             ->merge(config('gates.classes'))
