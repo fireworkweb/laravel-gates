@@ -88,7 +88,7 @@ class MiddlewareTest extends TestCase
             return 'yay';
         })->name('something.index')->middleware(GateOptional::class);
 
-        Log::shouldReceive('warning')
+        Log::shouldReceive('info')
             ->with("[fireworkweb/laravel-gates] No matching gate for 'something.index' route.");
 
         $response = $this->get('something');
