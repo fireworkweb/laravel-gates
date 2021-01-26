@@ -6,7 +6,7 @@ class GateOptional extends Gate
 {
     protected function noGate($routeName)
     {
-        logger()->warning(
+        logger()->info(
             "[fireworkweb/laravel-gates] No matching gate for '{$routeName}' route."
         );
     }
