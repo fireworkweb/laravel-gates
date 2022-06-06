@@ -27,4 +27,10 @@ return [
     'classes' => [
         // App\Policies\SomePolicy::class,
     ],
+
+    'middleware' => [
+        'gate_optional' => [
+            'log_no_gates' => true,
+        ]
+    ]
 ];
