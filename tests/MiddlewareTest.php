@@ -65,7 +65,7 @@ class MiddlewareTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_it_candeny_optional_request()
+    public function test_it_can_deny_optional_request()
     {
         $this->app['router']->get('policy', function () {
             return 'yay';
