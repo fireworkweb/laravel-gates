@@ -16,8 +16,7 @@ class MiddlewareTest extends TestCase
         ]);
     }
 
-    /** @test */
-    public function it_can_allow_request()
+    public function test_it_can_allow_request()
     {
         $this->app['router']->get('policy', function () {
             return 'yay';
@@ -28,8 +27,7 @@ class MiddlewareTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /** @test */
-    public function it_can_deny_request()
+    public function test_it_can_deny_request()
     {
         $this->app['router']->get('policy', function () {
             return 'yay';
@@ -40,8 +38,7 @@ class MiddlewareTest extends TestCase
         $response->assertStatus(403);
     }
 
-    /** @test */
-    public function it_can_fail_request_without_gate()
+    public function test_it_can_fail_request_without_gate()
     {
         $this->app['router']->get('something', function () {
             return 'yay';
@@ -57,8 +54,7 @@ class MiddlewareTest extends TestCase
         );
     }
 
-    /** @test */
-    public function it_can_allow_optional_request()
+    public function test_it_can_allow_optional_request()
     {
         $this->app['router']->get('policy', function () {
             return 'yay';
@@ -69,8 +65,7 @@ class MiddlewareTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /** @test */
-    public function it_candeny_optional_request()
+    public function test_it_candeny_optional_request()
     {
         $this->app['router']->get('policy', function () {
             return 'yay';
@@ -81,8 +76,7 @@ class MiddlewareTest extends TestCase
         $response->assertStatus(403);
     }
 
-    /** @test */
-    public function it_can_allow_optional_request_without_gate_and_log()
+    public function test_it_can_allow_optional_request_without_gate_and_log()
     {
         $this->app['router']->get('something', function () {
             return 'yay';

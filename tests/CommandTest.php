@@ -14,8 +14,7 @@ class CommandTest extends TestCase
         ]);
     }
 
-    /** @test */
-    public function it_can_see_all_routes_with_gate()
+    public function test_it_can_see_all_routes_with_gate()
     {
         $this->app['router']->get('policy', function () {
             return 'yay';
@@ -28,8 +27,7 @@ class CommandTest extends TestCase
             ->assertExitCode(0);
     }
 
-    /** @test */
-    public function it_can_see_a_route_without_gate()
+    public function test_it_can_see_a_route_without_gate()
     {
         $this->app['router']->get('something', function () {
             return 'yay';
