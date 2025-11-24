@@ -18,8 +18,7 @@ class GatesClassesTest extends TestCase
         ]);
     }
 
-    /** @test */
-    public function it_register_gates_classes()
+    public function test_it_register_gates_classes()
     {
         $gates = [
             'policy.accept',
